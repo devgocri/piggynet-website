@@ -36,10 +36,8 @@ $(document).on("click", ".ip", () => {
 
 // This is to fetch the player count
 $(document).ready(() => {
-    let ip = $(".sip").attr("data-ip");
-    let port = $(".sip").attr("data-port");
-    if (port == "" || port == null) port = "25565";
-    if (ip == "" || ip == null) return console.error("Error fetching player count - is the IP set correctly in the HTML?");
+    let ip = "piggymc.ml";
+    let port = 56395;
     updatePlayercount(ip, port);
     // Updates every minute (not worth changing due to API cache)
     setInterval(() => {
@@ -49,10 +47,11 @@ $(document).ready(() => {
 
 const updatePlayercount = (ip, port) => {
     $.get(`https://api.mcsrvstat.us/bedrock/2/${ip}:${port}`, (result) => {
-          if (result.online === true)
-            $(".sip").html(result.players.online);
-          if (result.online === false){
-            $(".status").html("Currently offline");
+          if (result.online === true){
+            $(".status").html('Join <span class="count"></span> players <a href="minecraft://?addExternalServer=PiggyNetwork%7Cpiggymc.ml:56395">here</a>');
+            $(".count").html(result.players.online);
+    }else {
+            $(".status").html('Currently offline');
         }
     });
 };
