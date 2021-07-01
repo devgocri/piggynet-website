@@ -2,4 +2,4 @@
 
 This is the revamped version by [BestCodrEver](https://github.com/BestCodrEver)
 
-Status: INCOMPLETE
+Status: Waiting for pictures on staff page
