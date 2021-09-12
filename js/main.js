@@ -36,7 +36,7 @@ $(document).on("click", ".ip", () => {
 
 // This is to fetch the player count
 $(document).ready(() => {
-    let ip = "piggymc.tk";
+    let ip = "play.piggymc.tk";
     let port = 19132;
     updatePlayercount(ip, port);
     // Updates every minute (not worth changing due to API cache)
