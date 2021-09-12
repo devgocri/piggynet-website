@@ -48,7 +48,7 @@ $(document).ready(() => {
 const updatePlayercount = (ip, port) => {
     $.get(`https://api.mcsrvstat.us/bedrock/2/${ip}:${port}`, (result) => {
           if (result.online === true){
-            $(".status").html('Join <span class="count"></span> players <a href="minecraft://?addExternalServer=PiggyNetwork%7Cpiggymc.tk:19132">here</a>');
+            $(".status").html('Join <span class="count"></span> players <a href="minecraft://?addExternalServer=PiggyNetwork%7Cplay.piggymc.tk:19132">here</a>');
             $(".count").html(result.players.online);
     }else {
             $(".status").html('Currently offline');
